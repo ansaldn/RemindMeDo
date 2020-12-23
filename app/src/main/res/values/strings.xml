@@ -15,4 +15,14 @@
     <string name="welcomeText">Welcome to RemindMeDo. The app that reminds you to complete tasks based on your current location. Yes it\'s that simple</string>
     <string name="signUp">"I'm New"</string>
     <string name="logIn">Log In</string>
+
+    <!-- Strings related to the Sign Up Screen-->
+    <string name="signUpText">We recommend you use Google services to sign up as it is very likely they already collect key information to allow this app to work</string>
+    <string name="signUpText2">If you would prefer to sign up manually fill out the form below!</string>
+    <string name="submit">Submit</string>
+    <string name="radioButton">You agree to the Terms and Conditions</string>
+    <string-array name="radioGroup">
+        You Agree to the Terms and Conditions
+        You are aware that this applications uses your current geographical location at any given time
+    </string-array>
 </resources>
