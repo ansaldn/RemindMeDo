@@ -9,4 +9,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Strings related to Splash Screen -->
+    <string name="mainLogo">mainLogo</string>
+    <string name="welcomeText">Welcome to RemindMeDo. The app that reminds you to complete tasks based on your current location. Yes it\'s that simple</string>
+    <string name="signUp">"I'm New"</string>
+    <string name="logIn">Log In</string>
 </resources>

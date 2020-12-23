@@ -38,7 +38,7 @@ public class newLogOn extends AppCompatActivity {
 
                 if (inputUsername.isEmpty() || inputPassword.isEmpty())
                 {
-                    Toast.makeText(newLogOn.this, "You have no entered a username or password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(newLogOn.this, "You have not entered a username or password!", Toast.LENGTH_SHORT).show();
                 }else{
                     isValid = validate(inputUsername, inputPassword);
                     if (!isValid) {
