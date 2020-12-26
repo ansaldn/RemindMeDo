@@ -47,7 +47,7 @@ public class newLogOn extends AppCompatActivity {
                         Toast.makeText(newLogOn.this, "Success.", Toast.LENGTH_SHORT).show();
 
                         //This should open up the next screen if the log in is successful.
-                        //Intent intent  = new Intent(newLogOn.this, splashScreen.class);
+                        //Intent intent  = new Intent(newLogOn.this, mainHome.class);
                         //startActivity(intent);
                     }
 

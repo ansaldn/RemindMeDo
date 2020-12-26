@@ -20,6 +20,14 @@
     <string name="signUpText">We recommend you use Google services to sign up as it is very likely they already collect key information to allow this app to work</string>
     <string name="signUpText2">If you would prefer to sign up manually fill out the form below!</string>
     <string name="submit">Submit</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="password">Enter Password</string>
+    <string name="verifyPassword">Confirm Password</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="houseAddress">House Address</string>
+    <string name="googleSignUp">Sign up with Google Instead</string>
     <string name="radioButton">You agree to the Terms and Conditions</string>
     <string-array name="radioGroup">
         You Agree to the Terms and Conditions
