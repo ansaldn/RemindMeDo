@@ -20,6 +20,7 @@ public class newLogOn extends AppCompatActivity {
     private final String Password = "Password1";
 
     boolean isValid = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,18 +56,33 @@ public class newLogOn extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
         // FOR GOOGLE BUTTON
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
+
+        View googleLogin = findViewById(R.id.googleLogin);
+
+        /* googleLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.googleLogin:
+                        SignIn();
+                        break;
+                }
+
+            }
+        }); */
+
+
     }
+
+   /* private void SignIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    } */
     private boolean validate(String username, String password){
         return username.equals(Username) && password.equals(Password);
     }
