@@ -31,6 +31,23 @@
     <string name="radioButton">You agree to the Terms and Conditions</string>
     <string-array name="radioGroup">
         You Agree to the Terms and Conditions
-        You are aware that this applications uses your current geographical location at any given time
+        You are aware that this applications uses your current geographical location at any given
+        time
     </string-array>
+
+    <!-- Items related to Main Screen including tabbed bar and settings-->
+    <string name="title_activity_main">Main</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_reminders">Reminders</string>
+    <string name="menu_locations">Locations</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
 </resources>
