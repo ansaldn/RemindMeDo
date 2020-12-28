@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.remindmedo.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_reminders"
+        android:name="com.example.remindmedo.ui.gallery.GalleryFragment"
+        android:label="@string/menu_reminders"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_locations"
+        android:name="com.example.remindmedo.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_locations"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.remindmedo.Settings"
+        android:label="@string/settings"
+        tools:layout="@layout/nav_settings" />
+</navigation>
