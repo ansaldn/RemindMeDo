@@ -2,11 +2,13 @@ package com.example.remindmedo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -14,9 +16,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 
 public class newLogOn extends AppCompatActivity {
 
+    private String TAG;
     private EditText username;
     private EditText password;
     private Button loginBTN;
@@ -64,8 +69,10 @@ public class newLogOn extends AppCompatActivity {
                         Intent intent  = new Intent(newLogOn.this, Main.class);
                         startActivity(intent);
                     }
-
                 }
+            }
+            private boolean validate(String username, String password){
+                return username.equals(Username) && password.equals(Password);
             }
         });
 
@@ -80,13 +87,15 @@ public class newLogOn extends AppCompatActivity {
                 .build();
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-
         signin = findViewById(R.id.googleLogin);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getId() == R.id.googleLogin) {
                     signIn();
+                    startActivity(intent);
+                    Toast.makeText(newLogOn.this, "Success", Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(newLogOn.this, Main.class);
                     startActivity(intent);
                 }else {
@@ -94,17 +103,33 @@ public class newLogOn extends AppCompatActivity {
                 }
 
 
+
             }
             private void signIn(){
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(signInIntent, RC_SIGN_IN);
             }
+
+
         });
+
     }
 
-
-
-    private boolean validate(String username, String password){
-        return username.equals(Username) && password.equals(Password);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
     }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask){
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+        } catch (ApiException e){
+            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+        }
+    }
+
 }
