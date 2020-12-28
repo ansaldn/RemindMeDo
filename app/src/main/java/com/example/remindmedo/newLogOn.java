@@ -2,7 +2,6 @@ package com.example.remindmedo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,6 +87,8 @@ public class newLogOn extends AppCompatActivity {
             public void onClick(View v) {
                 if (v.getId() == R.id.googleLogin) {
                     signIn();
+                    Intent intent = new Intent(newLogOn.this, Main.class);
+                    startActivity(intent);
                 }else {
                         Toast.makeText(newLogOn.this, "Sign In Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
