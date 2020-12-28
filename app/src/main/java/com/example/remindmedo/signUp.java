@@ -70,7 +70,7 @@ public class signUp extends AppCompatActivity {
                     if (!isValid) {
                         Toast.makeText(signUp.this, "The passwords do not match", Toast.LENGTH_SHORT).show();
                     }else{
-                        Intent intent = new Intent(signUp.this, main.class);
+                        Intent intent = new Intent(signUp.this, newLogOn.class);
                         startActivity(intent);
                         Toast.makeText(signUp.this, "Successful!", Toast.LENGTH_SHORT).show();
                     }
@@ -93,7 +93,7 @@ public class signUp extends AppCompatActivity {
                     signIn();
                     Toast.makeText(signUp.this, "Success", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(signUp.this, empty.class);
+                    Intent intent = new Intent(signUp.this, main.class);
                     startActivity(intent);
                 }else {
                     Toast.makeText(signUp.this, "Sign In Unsuccessful", Toast.LENGTH_SHORT).show();
