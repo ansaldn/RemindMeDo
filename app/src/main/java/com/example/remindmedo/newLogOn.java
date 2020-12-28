@@ -21,7 +21,7 @@ import com.google.android.gms.tasks.Task;
 
 public class newLogOn extends AppCompatActivity {
 
-    private String TAG;
+    String TAG;
     private EditText username;
     private EditText password;
     private Button loginBTN;
@@ -66,7 +66,7 @@ public class newLogOn extends AppCompatActivity {
                         Toast.makeText(newLogOn.this, "Success.", Toast.LENGTH_SHORT).show();
 
                         //This should open up the next screen if the log in is successful.
-                        Intent intent  = new Intent(newLogOn.this, Main.class);
+                        Intent intent  = new Intent(newLogOn.this, empty.class);
                         startActivity(intent);
                     }
                 }
@@ -79,9 +79,6 @@ public class newLogOn extends AppCompatActivity {
         // FOR GOOGLE BUTTON
         // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
 
-        // FOR GOOGLE BUTTON
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -93,26 +90,20 @@ public class newLogOn extends AppCompatActivity {
             public void onClick(View v) {
                 if (v.getId() == R.id.googleLogin) {
                     signIn();
-                    startActivity(intent);
                     Toast.makeText(newLogOn.this, "Success", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(newLogOn.this, Main.class);
+                    Intent intent = new Intent(newLogOn.this, empty.class);
                     startActivity(intent);
                 }else {
                         Toast.makeText(newLogOn.this, "Sign In Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
-
-
-
             }
+
             private void signIn(){
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(signInIntent, RC_SIGN_IN);
             }
-
-
         });
-
     }
 
     @Override
@@ -128,7 +119,7 @@ public class newLogOn extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
         } catch (ApiException e){
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+            Log.w(TAG,"signInResult:failed code=" + e.getStatusCode());
         }
     }
 

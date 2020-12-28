@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class splashScreen extends AppCompatActivity {
     Button logIn, signUp;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

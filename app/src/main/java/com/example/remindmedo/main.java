@@ -1,12 +1,9 @@
 package com.example.remindmedo;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,35 +12,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-public class Main extends AppCompatActivity {
-
-    TextView name, email, id;
+public class main extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if (acct != null) {
-            String personName = acct.getDisplayName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
-
-            name.setText(personName);
-            email.setText(personEmail);
-            id.setText(personId);
-
-
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

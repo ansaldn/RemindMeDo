@@ -45,14 +45,14 @@
             android:id="@+id/textView3"
             android:layout_width="350dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="@string/signUpText2"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/googleLogin" />
 
         <EditText
             android:id="@+id/firstName"
@@ -137,10 +137,10 @@
             android:id="@+id/googleLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/verifyPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
             android:id="@+id/password"
