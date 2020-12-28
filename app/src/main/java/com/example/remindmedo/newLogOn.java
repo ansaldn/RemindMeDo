@@ -66,7 +66,7 @@ public class newLogOn extends AppCompatActivity {
                         Toast.makeText(newLogOn.this, "Success.", Toast.LENGTH_SHORT).show();
 
                         //This should open up the next screen if the log in is successful.
-                        Intent intent  = new Intent(newLogOn.this, empty.class);
+                        Intent intent  = new Intent(newLogOn.this, main.class);
                         startActivity(intent);
                     }
                 }
@@ -84,18 +84,21 @@ public class newLogOn extends AppCompatActivity {
                 .build();
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signin = findViewById(R.id.googleLogin);
-        signin.setOnClickListener(new View.OnClickListener() {
+        View googleLogin = findViewById(R.id.googleLogin);
+        googleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v.getId() == R.id.googleLogin) {
-                    signIn();
-                    Toast.makeText(newLogOn.this, "Success", Toast.LENGTH_SHORT).show();
+                switch (v.getId()) {
+                    case R.id.googleLogin:
+                        signIn();
+                        Toast.makeText(newLogOn.this, "Success", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(newLogOn.this, empty.class);
-                    startActivity(intent);
-                }else {
+                        Intent intent = new Intent(newLogOn.this, main.class);
+                        startActivity(intent);
+                        break;
+                    default:
                         Toast.makeText(newLogOn.this, "Sign In Unsuccessful", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
 
