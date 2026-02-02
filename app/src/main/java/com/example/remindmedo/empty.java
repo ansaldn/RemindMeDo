@@ -1,4 +1,5 @@
 package com.example.remindmedo;
+package com.example.remindmedo1;
 
 import android.content.Intent;
 import android.os.Bundle;
